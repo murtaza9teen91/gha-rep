@@ -1,5 +1,7 @@
+# this workflow will trigger automatically when the main workflow (Main GitHub Actions Workflow) is completed
 name: Auto Trigger Workflow
 on:
+  # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_run
   workflow_run:
     workflows: [Main GitHub Actions Workflow]
     types:
