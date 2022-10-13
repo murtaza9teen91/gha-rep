@@ -1,5 +1,6 @@
 name: Main GitHub Actions Workflow
-on: [push]
+on:
+  workflow_dispatch:
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
