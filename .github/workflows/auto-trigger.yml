@@ -1,0 +1,17 @@
+name: Auto Trigger Workflow
+on:
+  workflow_run:
+    workflows: [Main GitHub Actions Workflow]
+    types:
+      - completed
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a when Main GitHub Actions Workflow is completed"
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
